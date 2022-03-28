@@ -19,7 +19,8 @@ const upload = multer({ storage: storage })
 app.use("/uploads", express.static('uploads'))
 
 app.get("/", (req, res) => {
-    res.sendFile(path.join(__dirname, "./index.html"))
+    res.json({"msg":"Hello""})
+//     res.sendFile(path.join(__dirname, "./index.html"))
 })
 
 app.post("/file", upload.single("file"), (req, res) => {
